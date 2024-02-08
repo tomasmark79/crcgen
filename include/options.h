@@ -23,10 +23,7 @@ class Options
         static std::string app_name;
         static std::string help;
 
-
         p_crc_fun checksum;
-
-
 };
 
 #endif // OPTIONS_H
