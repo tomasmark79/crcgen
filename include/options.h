@@ -6,6 +6,8 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
+#include <fstream>
+#include <vector>
 
 #include "Checksums.h"
 

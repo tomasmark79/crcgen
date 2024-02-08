@@ -29,20 +29,37 @@ Options::Options(int argc, char **argv)
             throw std::runtime_error("!");
         }
 
+        // get selected pointer to the function
         checksum = option.at(argv[1]);
 
-
         cout << app_name << endl;
-
-        // cout << "Work folder\t: " << argv[0] << endl;
         cout << "processing\t: " << argv[1] << endl;
         cout << "at\t\t: " << argv[2] << endl;
-        cout << "result\t\t: " << "AAA" << endl;
+        if (std::ifstream is {argv[2], std::ios::binary | std::ios::ate})
+        {
+
+// todo huge file size support
+            auto size = is.tellg();
+            std::string str(size, '\0');
+            is.seekg(0);
+            if (is.read(&str[0], size))
+            {
+                try
+                {
+                    cout << "result\t\t: " << std::hex << "0x" << checksum((char*)str.c_str(), size) << endl;
+                }
+                catch (std::exception &e)
+                {
+                    cout << e.what() << endl;
+                }
+
+            }
+            cout << is.gcount();
+        }
     }
     catch (std::exception &e)
     {
         cout << app_name << endl << help << endl;
-        // cout << endl << "Exception occured: " << e.what() << ". -> Wrong option?" << endl;
         cout << "-> Wrong option?\t Exiting" << endl;
     }
 }
