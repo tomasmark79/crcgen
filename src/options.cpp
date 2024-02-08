@@ -1,5 +1,12 @@
 #include "Options.h"
 
+std::string Options::help = R"(
+CrcGen v 0.0.1 - Tomas Mark - tomas@digitalspace.name
+options:
+--crc16
+--crc32
+)";
+
 std::map<std::string, Options::p_crc_fun> Options::option
 {
     { "--crc16", Checksums::crc16},
@@ -24,9 +31,8 @@ Options::Options(int argc, char **argv)
     }
     catch (std::exception &e)
     {
-        std::cout << "wrong input" << std::endl;
+        std::cout << help;
         exit (1);
-
     }
 }
 

@@ -20,6 +20,7 @@ class Options
 
     private:
         static std::map<std::string, p_crc_fun> option;
+        static std::string help;
         p_crc_fun checksum;
 
 
