@@ -1,12 +1,12 @@
-#include "options.h"
+#include "Options.h"
 
-std::map<std::string, options::p_crc_fun> options::option
+std::map<std::string, Options::p_crc_fun> Options::option
 {
     { "--crc16", Checksums::crc16},
     { "--crc32", Checksums::crc32},
 };
 
-options::options(int argc, char **argv)
+Options::Options(int argc, char **argv)
 {
     //ctor
     try
@@ -30,7 +30,7 @@ options::options(int argc, char **argv)
     }
 }
 
-options::~options()
+Options::~Options()
 {
     //dtor
 }

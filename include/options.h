@@ -9,12 +9,12 @@
 
 #include "Checksums.h"
 
-class options
+class Options
 {
     public:
         using p_crc_fun = void(*)(void);
-        options(int argc, char **argv);
-        virtual ~options();
+        Options(int argc, char **argv);
+        virtual ~Options();
 
     protected:
 
