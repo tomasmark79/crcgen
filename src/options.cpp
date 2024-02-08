@@ -3,9 +3,8 @@
 using std::cout;
 using std::endl;
 
-// http://www.patorjk.com/software/taag/#p=display&f=Small&t=Tomas%20Mark
 std::string Options::app_name = R"(CrcGen 0.0.1 - 2024 - T.Mark - sw@digitalspace.name
-                                   )";
+)";
 std::string Options::help = R"(Available options: --crc16 --crc32 --crc64)";
 
 std::map<std::string, Options::p_crc_fun> Options::option
@@ -32,7 +31,9 @@ Options::Options(int argc, char **argv)
 
         checksum = option.at(argv[1]);
 
+
         cout << app_name << endl;
+
         // cout << "Work folder\t: " << argv[0] << endl;
         cout << "processing\t: " << argv[1] << endl;
         cout << "at\t\t: " << argv[2] << endl;

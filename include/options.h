@@ -12,7 +12,7 @@
 class Options
 {
     public:
-        using p_crc_fun = void(*)(void);
+        using p_crc_fun = unsigned(*)(void*, size_t);
         Options(int argc, char **argv);
         virtual ~Options();
 
