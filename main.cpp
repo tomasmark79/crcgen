@@ -1,14 +1,12 @@
 #include <iostream>
-#include "options.h"
+#include "Options.h"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
-    cout << "Hello world!" << endl;
 
-
-
+    Options option(argc, argv);
 
     return 0;
 }
