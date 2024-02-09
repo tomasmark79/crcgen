@@ -30,7 +30,7 @@ std::string Options::help = R"(
 Usage: crcgen [algorithms] [file path to process]
 
 Options:
-    --ctc16  (BISYNCH, ARC, LHA, ZOO)
+    --crc16  (BISYNCH, ARC, LHA, ZOO)
     --ccitt  (Designated by CCITT, KERMIT)
     --xmodem (XMODEM, ZMODEM, ACORN)
     --crc32  (ADCCP, PKZip, libPNG, AUTODIN II, Ethernet, FDDI)
@@ -66,9 +66,12 @@ Options::Options(int argc, char **argv)
         }
         else
         {
+            // The reference to the mapped value is obtained
+            // as if by expression this->find(x)->second
             checksum = option.at(argv[1]);
 
-            cout << "algorithms\t: " << argv[1] << endl;
+            //cout << "-" << endl;
+            cout << "checksum type\t: " << argv[1] << endl;
             cout << "file\t\t: " << argv[2] << endl;
 
             if (std::ifstream is {argv[2], std::ios::binary | std::ios::ate})
@@ -80,7 +83,8 @@ Options::Options(int argc, char **argv)
                 if (is.get(&str[0], size).good())
                 {
                     //C++
-                    cout << "CRCt\t\t: " << std::hex << std::uppercase << std::showbase << checksum((char*)str.c_str(), size) << endl;
+                    cout << "crc\t\t: " << std::hex << std::showbase << std::uppercase << checksum((char*)str.c_str(), size) << endl;
+                    //cout << "-" << endl;
                     //C
                     // printf("CRC\t\t: 0x%X\n", checksum((char*)str.c_str(), size));
                 }

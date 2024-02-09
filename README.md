@@ -4,7 +4,7 @@
 Usage: crcgen [algorithms] [file path to process]
 
 Options:
-    --ctc16  (BISYNCH, ARC, LHA, ZOO)
+    --crc16  (BISYNCH, ARC, LHA, ZOO)
     --ccitt  (Designated by CCITT, KERMIT)
     --xmodem (XMODEM, ZMODEM, ACORN)
     --crc32  (ADCCP, PKZip, libPNG, AUTODIN II, Ethernet, FDDI)
