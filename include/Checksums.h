@@ -10,9 +10,10 @@ class Checksums
         Checksums();
         virtual ~Checksums();
 
-        static unsigned crc16(void *b, size_t s);
-        static unsigned crc32(void *b, size_t s);
-        static unsigned crc64(void *b, size_t s);
+        static unsigned crc_16 (void *b, size_t s);
+        static unsigned crc_ccitt (void *b, size_t s);
+        static unsigned crc_xmodem (void *b, size_t s);
+        static unsigned crc_32 (void *b, size_t s);
 
     protected:
 
