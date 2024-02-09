@@ -1,6 +1,6 @@
 //MIT License
 //
-//Copyright (c) 2024 Tomáš Mark
+//Copyright (c) 2024 Tomas Mark
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@
 //SOFTWARE.
 
 
-#include <iostream>
+
 #include "Options.h"
 
 using namespace std;
