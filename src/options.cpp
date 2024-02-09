@@ -82,23 +82,18 @@ Options::Options(int argc, char **argv)
 
                 if (is.get(&str[0], size).good())
                 {
-                    //C++
                     cout << "crc\t\t: " << std::hex << std::showbase << std::uppercase << checksum((char*)str.c_str(), size) << endl;
-                    //cout << "-" << endl;
-                    //C
-                    // printf("CRC\t\t: 0x%X\n", checksum((char*)str.c_str(), size));
                 }
                 else
                 {
                     std::cerr << "Processing file " << argv[2] << " failed." << endl;
-                    cout << is.gcount();
                 }
             }
         }
     }
     catch (std::exception &e)
     {
-        cout << "Error... Exiting..." << endl;
+        cout << help;
     }
 }
 
