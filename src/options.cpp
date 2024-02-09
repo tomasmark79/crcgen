@@ -3,21 +3,25 @@
 using std::cout;
 using std::endl;
 
-std::string Options::app_name = R"(
-CrcGen 0.0.1 - 2024 - T.Mark - sw@digitalspace.name
+std::string Options::app_name = R"(CrcGen 0.0.1 - 2024 - T.Mark - sw@digitalspace.name
 )";
-std::string Options::help = R"(Available options: --crc16 --crc_ccitt --crc_xmodem --crc_32)";
+std::string Options::help = R"(Available crc algorithms: --crc16 --ccitt --xmodem --crc32)";
 
 std::map<std::string, Options::p_crc_fun> Options::option
 {
-    { "--crc_16", Checksums::crc_16},
-    { "--crc_ccitt", Checksums::crc_ccitt},
-    { "--crc_xmodem", Checksums::crc_xmodem},
-    { "--crc_32", Checksums::crc_32},
+    { "--crc16", Checksums::crc_16},
+    { "--ccitt", Checksums::crc_ccitt},
+    { "--xmodem", Checksums::crc_xmodem},
+    { "--crc32", Checksums::crc_32},
 };
 
+// argv[0] - main exe module path
+// argv[1] - argument of crc algo
+// argv[2] - destinated file path
 Options::Options(int argc, char **argv)
 {
+    cout << app_name << endl;
+
     //ctor
     try
     {
@@ -25,44 +29,37 @@ Options::Options(int argc, char **argv)
         {
             throw std::runtime_error("!");
         }
-
-        // get selected pointer to the function
-        checksum = option.at(argv[1]);
-
-        cout << app_name << endl;
-        cout << "processing\t: " << argv[1] << endl;
-        cout << "at\t\t: " << argv[2] << endl;
-
-        if (std::ifstream is {argv[2], std::ios::binary | std::ios::ate})
+        else
         {
-            auto size = is.tellg();
-            std::string str(size, '\0');
-            is.seekg(0);
+            checksum = option.at(argv[1]);
+            cout << "Processing\t: " << argv[1] << endl;
+            cout << "For file\t: " << argv[2] << endl;
 
-            // if (is.read(&str[0], size).good())
-            if (is.get(&str[0], size).good())
+            if (std::ifstream is {argv[2], std::ios::binary | std::ios::ate})
             {
-                try
+                auto size = is.tellg();
+                std::string str(size, '\0');
+                is.seekg(0);
+
+                if (is.get(&str[0], size).good())
                 {
-                    cout << "result\t\t: " << std::hex << "0x" << checksum((char*)str.c_str(), size) << endl;
+                    //C++
+                    cout << "result\t\t: " << std::hex << std::uppercase << std::showbase << checksum((char*)str.c_str(), size) << endl;
+                    //C
+                    // printf("CRC\t\t: 0x%X\n", checksum((char*)str.c_str(), size));
                 }
-                catch (std::exception &e)
+                else
                 {
-                    cout << e.what() << endl;
+                    std::cerr << "Processing file " << argv[2] << " failed." << endl;
+                    cout << is.gcount();
                 }
             }
-            else
-            {
-                std::cerr << "Processing file " << argv[2] << " failed." << endl;
-                cout << is.gcount();
-            }
-
         }
     }
     catch (std::exception &e)
     {
-        cout << app_name << endl << help << endl;
-        cout << "-> Wrong option?\t Exiting" << endl;
+        // cout << app_name << endl << help << endl;
+        cout << "Error... Exiting..." << endl;
     }
 }
 
