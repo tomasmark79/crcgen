@@ -1,3 +1,4 @@
+#CrcGen generating checksum codes file passed as the argument
 ```
 #CrcGen 0.0.1 - Copyright (c) 2024 Tomas Mark
 
