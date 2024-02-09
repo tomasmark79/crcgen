@@ -39,14 +39,11 @@ class Options
         using p_crc_fun = unsigned(*)(void*, size_t);
         Options(int argc, char **argv);
         virtual ~Options();
-
     protected:
-
     private:
         static std::map<std::string, p_crc_fun> option;
         static std::string app_name;
         static std::string help;
-
         p_crc_fun checksum;
 };
 

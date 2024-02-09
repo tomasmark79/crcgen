@@ -25,9 +25,16 @@
 using std::cout;
 using std::endl;
 
-std::string Options::app_name = R"(CrcGen 0.0.1 - Copyright (c) 2024 Tomas Mark
+std::string Options::app_name = R"(CrcGen 0.0.1 - Copyright (c) 2024 Tomas Mark)";
+std::string Options::help = R"(
+Usage: crcgen [algorithms] [file path to process]
+
+Options:
+    --ctc16  (BISYNCH, ARC, LHA, ZOO)
+    --ccitt  (Designated by CCITT, KERMIT)
+    --xmodem (XMODEM, ZMODEM, ACORN)
+    --crc32  (ADCCP, PKZip, libPNG, AUTODIN II, Ethernet, FDDI)
 )";
-std::string Options::help = R"(Available crc algorithms: --crc16 --ccitt --xmodem --crc32)";
 
 std::map<std::string, Options::p_crc_fun> Options::option
 {
@@ -47,6 +54,12 @@ Options::Options(int argc, char **argv)
     //ctor
     try
     {
+        if (argc == 1)
+        {
+            cout << help;
+            return;
+        }
+
         if ( (argc < 3) || (argv[1][0] != '-' || argv[1][1] != '-') )
         {
             throw std::runtime_error("!");
@@ -54,8 +67,9 @@ Options::Options(int argc, char **argv)
         else
         {
             checksum = option.at(argv[1]);
-            cout << "Processing\t: " << argv[1] << endl;
-            cout << "For file\t: " << argv[2] << endl;
+
+            cout << "algorithms\t: " << argv[1] << endl;
+            cout << "file\t\t: " << argv[2] << endl;
 
             if (std::ifstream is {argv[2], std::ios::binary | std::ios::ate})
             {
@@ -66,7 +80,7 @@ Options::Options(int argc, char **argv)
                 if (is.get(&str[0], size).good())
                 {
                     //C++
-                    cout << "result\t\t: " << std::hex << std::uppercase << std::showbase << checksum((char*)str.c_str(), size) << endl;
+                    cout << "CRCt\t\t: " << std::hex << std::uppercase << std::showbase << checksum((char*)str.c_str(), size) << endl;
                     //C
                     // printf("CRC\t\t: 0x%X\n", checksum((char*)str.c_str(), size));
                 }
@@ -80,7 +94,6 @@ Options::Options(int argc, char **argv)
     }
     catch (std::exception &e)
     {
-        // cout << app_name << endl << help << endl;
         cout << "Error... Exiting..." << endl;
     }
 }
