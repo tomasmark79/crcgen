@@ -1,0 +1,909 @@
+cscope 15 C:\Projects\_CppMaster\CompiledSources\CrcGen"               0000004416
+	@C:\Projects\_CppMaster\CompiledSources\CrcGen\README.md
+
+2 #CrcG’ 0.0.1 - 
+Cİyright
+ (
+c
+è2024 
+Tomas
+ 
+M¬k
+
+
+4 
+	gU§ge
+: 
+ücg’
+ [
+®gÜ™hms
+] [
+fe
+ 
+·th
+ 
+to
+ 
+´oûss
+]
+
+6 
+O±iÚs
+:
+
+7 --
+ùc16
+ (
+BISYNCH
+, 
+ARC
+, 
+LHA
+, 
+ZOO
+)
+
+8 --
+cc™t
+ (
+DesigÇ‹d
+ 
+by
+ 
+CCITT
+, 
+KERMIT
+)
+
+9 --
+xmodem
+ (
+XMODEM
+, 
+ZMODEM
+, 
+ACORN
+)
+
+10 --
+	$üc32
+ (
+ADCCP
+, 
+PKZ
+, 
+libPNG
+, 
+AUTODIN
+ 
+II
+, 
+Eth”Ãt
+, 
+FDDI
+)
+
+12 
+Proûss
+ 
+»tuºed
+ 0 (0x0è
+executiÚ
+ 
+time
+ : 1.179 
+s
+
+
+13 
+P»ss
+ 
+ªy
+ 
+key
+ 
+to
+ .
+
+15 
+U£d
+ 
+äamewÜk
+ 
+by
+: 
+	`boo¡
+ (
+h‰ps
+:
+
+	@C:\Projects\_CppMaster\CompiledSources\CrcGen\include\Checksums.h
+
+1 #iâdeà
+CHECKSUMS_H
+
+
+2 
+	#CHECKSUMS_H
+
+
+	)
+
+25 
+	~"boo¡\üc.hµ
+"
+
+27 şas 
+	cChecksums
+
+
+29 
+	mpublic
+:
+
+30 
+Checksums
+();
+
+31 
+	mvœtu®
+ ~
+Checksums
+();
+
+32 
+üc_16
+ (*
+b
+, 
+size_t
+ 
+s
+);
+
+33 
+üc_cc™t
+ (*
+b
+, 
+size_t
+ 
+s
+);
+
+34 
+üc_xmodem
+ (*
+b
+, 
+size_t
+ 
+s
+);
+
+35 
+üc_32
+ (*
+b
+, 
+size_t
+ 
+s
+);
+
+36 
+	m´Ùeùed
+:
+
+37 
+´iv©e
+:
+
+	@C:\Projects\_CppMaster\CompiledSources\CrcGen\include\Options.h
+
+1 #iâdeà
+OPTIONS_H
+
+
+2 
+	#OPTIONS_H
+
+
+	)
+
+27 
+	~<m­
+>
+
+28 
+	~<¡ršg
+>
+
+29 
+	~<¡dexû±
+>
+
+30 
+	~<io¡»am
+>
+
+31 
+	~<f¡»am
+>
+
+32 
+	~<veùÜ
+>
+
+34 
+	~"Checksums.h
+"
+
+36 şas 
+	cO±iÚs
+
+
+38 
+	mpublic
+:
+
+39 
+usšg
+ 
+p_üc_fun
+ = (*)(*, 
+size_t
+);
+
+40 
+	`O±iÚs
+(
+¬gc
+, **
+¬gv
+);
+
+41 
+vœtu®
+ ~
+	`O±iÚs
+();
+
+42 
+´Ùeùed
+:
+
+43 
+´iv©e
+:
+
+44 
+¡d
+::
+m­
+<¡d::
+¡ršg
+, 
+p_üc_fun
+> 
+İtiÚ
+;
+
+45 
+¡d
+::
+¡ršg
+ 
+­p_Çme
+;
+
+46 
+¡d
+::
+¡ršg
+ 
+h–p
+;
+
+47 
+p_üc_fun
+ 
+checksum
+;
+
+	@C:\Projects\_CppMaster\CompiledSources\CrcGen\main.cpp
+
+23 
+	~"O±iÚs.h
+"
+
+25 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+29 
+	$maš
+(
+¬gc
+, **
+¬gv
+)
+
+31 
+O±iÚs
+ 
+	`İtiÚ
+(
+¬gc
+, 
+¬gv
+);
+
+33 
+	}
+}
+
+	@C:\Projects\_CppMaster\CompiledSources\CrcGen\src\Checksums.cpp
+
+23 
+	~"Checksums.h
+"
+
+25 
+	gChecksums
+::
+	$Checksums
+()
+
+28 
+	}
+}
+
+30 
+Checksums
+::~
+	$Checksums
+()
+
+33 
+	}
+}
+
+35 
+Checksums
+::
+	$üc_16
+(*
+b
+, 
+size_t
+ 
+s
+)
+
+38 
+boo¡
+::
+üc_basic
+<16> 
+	`üc
+Ğ0x8005u, 0u, 0u, 
+Œue
+,rue );
+
+39 
+üc
+.
+	`´oûss_by‹s
+Ğ
+b
+, 
+s
+ );
+
+40  
+üc
+.
+	`checksum
+();
+
+41 
+	}
+}
+
+43 
+	gChecksums
+::
+	$üc_cc™t
+(*
+b
+, 
+size_t
+ 
+s
+)
+
+46 
+boo¡
+::
+üc_İtim®
+<16, 0x1021, 0, 0, 
+Œue
+,rue> 
+üc
+;
+
+47 
+üc
+.
+	`´oûss_by‹s
+Ğ
+b
+, 
+s
+ );
+
+48  
+üc
+.
+	`checksum
+();
+
+49 
+	}
+}
+
+51 
+	gChecksums
+::
+	$üc_xmodem
+(*
+b
+, 
+size_t
+ 
+s
+)
+
+54 
+boo¡
+::
+üc_İtim®
+<16, 0x1021, 0, 0, 
+çl£
+, f®£> 
+üc
+;
+
+55 
+üc
+.
+	`´oûss_by‹s
+Ğ
+b
+, 
+s
+ );
+
+56  
+üc
+.
+	`checksum
+();
+
+57 
+	}
+}
+
+59 
+	gChecksums
+::
+	$üc_32
+(*
+b
+, 
+size_t
+ 
+s
+)
+
+62 
+boo¡
+::
+üc_İtim®
+<32, 0x04C11DB7, 0xFFFFFFFF, 0xFFFFFFFF, 
+Œue
+,rue> 
+üc
+;
+
+63 
+üc
+.
+	`´oûss_by‹s
+Ğ
+b
+, 
+s
+ );
+
+64  
+üc
+.
+	`checksum
+();
+
+65 
+	}
+}
+
+	@C:\Projects\_CppMaster\CompiledSources\CrcGen\src\Options.cpp
+
+23 
+	~"O±iÚs.h
+"
+
+25 
+usšg
+ 
+	g¡d
+::
+cout
+;
+
+26 
+usšg
+ 
+	g¡d
+::
+’dl
+;
+
+28 
+	g¡d
+::
+¡ršg
+ 
+O±iÚs
+::
+­p_Çme
+ = 
+R
+"(CrcGen 0.0.1 - Copyright (c) 2024 Tomas Mark)";
+
+29 
+	g¡d
+::
+¡ršg
+ 
+O±iÚs
+::
+h–p
+ = 
+R
+"(
+
+30 
+U§ge
+: 
+ücg’
+ [
+®gÜ™hms
+] [
+fe
+ 
+·th
+ 
+to
+ 
+´oûss
+]
+
+32 
+O±iÚs
+:
+
+33 --
+ùc16
+ (
+BISYNCH
+, 
+ARC
+, 
+LHA
+, 
+ZOO
+)
+
+34 --
+cc™t
+ (
+DesigÇ‹d
+ 
+by
+ 
+CCITT
+, 
+KERMIT
+)
+
+35 --
+xmodem
+ (
+XMODEM
+, 
+ZMODEM
+, 
+ACORN
+)
+
+36 --
+üc32
+ (
+ADCCP
+, 
+PKZ
+, 
+libPNG
+, 
+AUTODIN
+ 
+II
+, 
+Eth”Ãt
+, 
+FDDI
+)
+
+39 
+	g¡d
+::
+m­
+<
+¡d
+::
+¡ršg
+, 
+	gO±iÚs
+::
+p_üc_fun
+> 
+O±iÚs
+::
+İtiÚ
+
+
+41 { "--üc16", 
+	gChecksums
+::
+üc_16
+},
+
+42 { "--cc™t", 
+	gChecksums
+::
+üc_cc™t
+},
+
+43 { "--xmodem", 
+	gChecksums
+::
+üc_xmodem
+},
+
+44 { "--üc32", 
+	gChecksums
+::
+üc_32
+},
+
+50 
+	gO±iÚs
+::
+	$O±iÚs
+(
+¬gc
+, **
+¬gv
+)
+
+52 
+cout
+ << 
+­p_Çme
+ << 
+’dl
+;
+
+55 
+Œy
+
+
+57 ià(
+¬gc
+ == 1)
+
+59 
+cout
+ << 
+h–p
+;
+
+63 iàĞ(
+¬gc
+ < 3è|| (
+¬gv
+[1][0] != '-' ||‡rgv[1][1] != '-') )
+
+65 
+throw
+ 
+¡d
+::
+	`ruÁime_”rÜ
+("!");
+
+69 
+checksum
+ = 
+İtiÚ
+.
+	`©
+(
+¬gv
+[1]);
+
+71 
+cout
+ << "Proûssšg\t: " << 
+¬gv
+[1] << 
+’dl
+;
+
+72 
+cout
+ << "FÜ fe\t: " << 
+¬gv
+[2] << 
+’dl
+;
+
+74 ià(
+¡d
+::
+if¡»am
+ 
+is
+ {
+¬gv
+[2], std::
+ios
+::
+bš¬y
+ | std::ios::
+©e
+})
+
+76 autØ
+size
+ = 
+is
+.
+	`‹Îg
+();
+
+77 
+¡d
+::
+¡ršg
+ 
+	`¡r
+(
+size
+, '\0');
+
+78 
+is
+.
+	`£ekg
+(0);
+
+80 ià(
+is
+.
+	`g‘
+(&
+¡r
+[0], 
+size
+).
+	`good
+())
+
+83 
+cout
+ << "»suÉ\t\t: " << 
+¡d
+::
+hex
+ << std::
+uµ”ÿ£
+ << std::
+showba£
+ << 
+	`checksum
+((*)
+¡r
+.
+	`c_¡r
+(), 
+size
+è<< 
+’dl
+;
+
+89 
+¡d
+::
+û¼
+ << "Proûssšg f" << 
+¬gv
+[2] << " faed." << 
+’dl
+;
+
+90 
+cout
+ << 
+is
+.
+	`gcouÁ
+();
+
+95 
+	`ÿtch
+ (
+¡d
+::
+exû±iÚ
+ &
+e
+)
+
+97 
+cout
+ << "E¼Ü... Ex™šg..." << 
+’dl
+;
+
+99 
+	}
+}
+
+101 
+	gO±iÚs
+::~
+	$O±iÚs
+()
+
+104 
+	}
+}
+
+	@
+1
+.
+0
+6
+367
+C:\Projects\_CppMaster\CompiledSources\CrcGen\README.md
+C:\Projects\_CppMaster\CompiledSources\CrcGen\include\Checksums.h
+C:\Projects\_CppMaster\CompiledSources\CrcGen\include\Options.h
+C:\Projects\_CppMaster\CompiledSources\CrcGen\main.cpp
+C:\Projects\_CppMaster\CompiledSources\CrcGen\src\Checksums.cpp
+C:\Projects\_CppMaster\CompiledSources\CrcGen\src\Options.cpp
